@@ -11,6 +11,10 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: inherit;
   }
 
+  html{
+    font-size: 62.5%;
+  }
+
   body {
     margin: 0;
     padding: 80px 65px 0;

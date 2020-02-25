@@ -16,15 +16,29 @@ const AboutWrapper = styled.section`
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  padding-top: 100px;
+  padding-top: 80px;
   padding-left: 80px;
+
+  @media (max-width: 1400px) {
+    & h1 {
+      font-size: 35px;
+    }
+
+    & p {
+      font-size: 1.3rem;
+    }
+
+    .author {
+      font-size: 2.5rem;
+    }
+  }
 `;
 
 const Line = styled.div`
   width: 100vw;
   height: 4px;
   background-color: ${({ theme }) => theme.colors.blackColor};
-  margin: 25px 0;
+  margin: 2.8rem 0;
 `;
 
 const AboutPage = ({ data }) => {
@@ -42,7 +56,9 @@ const AboutPage = ({ data }) => {
               <p>{item.shortdescription}</p>
               <Line />
               <p>{item.description}</p>
-              <Heading size={'extraLarge'}>{item.author}</Heading>
+              <Heading className="author" size={'extraLarge'}>
+                {item.author}
+              </Heading>
               <Line />
             </TextWrapper>
             <ImageWrapper fluid={item.hero.fluid} />
